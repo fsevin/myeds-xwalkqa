@@ -214,5 +214,56 @@
         "valueType": "string"
       }
     ]
+  },
+  {
+    "id": "local-time",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "location",
+        "label": "Location",
+        "description": "City name, e.g. New York, London, Tokyo",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "teaser",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "Image",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "imageAlt",
+        "label": "Image alt text",
+        "required": true
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "textContent_text",
+        "title": "Text",
+        "required": true
+      },
+      {
+        "component": "aem-content",
+        "valueType": "string",
+        "name": "textContent_cta",
+        "label": "CTA"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "textContent_ctaText",
+        "label": "CTA label"
+      }
+    ]
   }
 ]

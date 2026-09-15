@@ -1,0 +1,29 @@
+.local-time {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 24px;
+  text-align: center;
+}
+
+.local-time-city {
+  margin: 0;
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-s);
+  color: var(--text-color);
+}
+
+.local-time-clock {
+  margin: 0;
+  font-size: var(--heading-font-size-xl);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: var(--link-color);
+}
+
+.local-time.local-time-unknown .local-time-clock {
+  font-size: var(--body-font-size-m);
+  font-weight: 400;
+  color: var(--dark-color);
+}
