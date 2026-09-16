@@ -255,3 +255,15 @@ main .section.highlight {
   margin: 0;
   padding: 40px 0;
 }
+
+main .section.side-by-side > div {
+  display: grid;
+  gap: 32px;
+}
+
+@media (width >= 900px) {
+  main .section.side-by-side > div {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: center;
+  }
+}
