@@ -52,7 +52,8 @@
         "columns",
         "fragment",
         "teaser",
-        "local-time"
+        "local-time",
+        "icon-list"
       ]
     }
   ]

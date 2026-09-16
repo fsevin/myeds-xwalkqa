@@ -17,7 +17,8 @@
       "columns",
       "fragment",
       "teaser",
-      "local-time"
+      "local-time",
+      "icon-list"
     ]
   },
   {
@@ -39,6 +40,12 @@
       "image",
       "button",
       "title"
+    ]
+  },
+  {
+    "id": "icon-list",
+    "components": [
+      "icon-list-item"
     ]
   }
 ]
