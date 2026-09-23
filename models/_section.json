@@ -58,7 +58,8 @@
         "teaser",
         "local-time",
         "icon-list",
-        "calculator"
+        "calculator",
+        "text-image"
       ]
     }
   ]

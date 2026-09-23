@@ -1,0 +1,31 @@
+.text-image > div {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.text-image-image img {
+  display: block;
+  width: 100%;
+}
+
+.text-image-text p:first-child {
+  margin-top: 0;
+}
+
+.text-image-text p:last-child {
+  margin-bottom: 0;
+}
+
+@media (width >= 900px) {
+  .text-image > div {
+    flex-direction: row;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .text-image-image,
+  .text-image-text {
+    flex: 1;
+  }
+}
