@@ -184,6 +184,19 @@
     ]
   },
   {
+    "id": "content-fragment",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "path",
+        "label": "Content fragment path",
+        "value": "",
+        "description": "Path to the content fragment, e.g. /content/dam/myeds-xwalkqa/article/myarticle-2"
+      }
+    ]
+  },
+  {
     "id": "fragment",
     "fields": [
       {
