@@ -20,7 +20,8 @@
       "local-time",
       "icon-list",
       "calculator",
-      "text-image"
+      "text-image",
+      "content-fragment"
     ]
   },
   {
