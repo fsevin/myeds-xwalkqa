@@ -299,6 +299,46 @@
         "name": "text",
         "label": "Text",
         "value": ""
+      },
+      {
+        "component": "aem-content",
+        "name": "cta",
+        "label": "CTA link"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "ctaText",
+        "label": "CTA text",
+        "value": ""
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "ctaTitle",
+        "label": "CTA title",
+        "value": ""
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "ctaType",
+        "label": "CTA style",
+        "value": "primary",
+        "options": [
+          {
+            "name": "Default",
+            "value": ""
+          },
+          {
+            "name": "Primary",
+            "value": "primary"
+          },
+          {
+            "name": "Secondary",
+            "value": "secondary"
+          }
+        ]
       }
     ]
   },
