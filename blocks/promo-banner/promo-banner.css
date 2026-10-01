@@ -4,9 +4,7 @@
   --promo-banner-cta-background-color: #d81e2c;
   --promo-banner-cta-hover-background-color: #b01722;
   --promo-banner-cta-text-color: #fff;
-}
 
-.promo-banner > div {
   display: grid;
   grid-template-columns: 1fr;
   gap: 24px;
@@ -64,7 +62,7 @@
 }
 
 @media (width >= 900px) {
-  .promo-banner > div {
+  .promo-banner {
     grid-template-columns: 1fr 1fr;
     align-items: stretch;
     gap: 32px;
