@@ -12,6 +12,7 @@ async function fetchContentFragment(path) {
   return result?.item;
 }
 
+/* my comment */
 export default async function decorate(block) {
   const path = block.textContent.trim();
   block.textContent = '';

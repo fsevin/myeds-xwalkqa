@@ -1,0 +1,76 @@
+.promo-banner {
+  --promo-banner-panel-background-color: #2e0a4a;
+  --promo-banner-panel-text-color: #fff;
+  --promo-banner-cta-background-color: #d81e2c;
+  --promo-banner-cta-hover-background-color: #b01722;
+  --promo-banner-cta-text-color: #fff;
+}
+
+.promo-banner > div {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+.promo-banner-image {
+  min-height: 220px;
+}
+
+.promo-banner-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.promo-banner-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 16px;
+  padding: 40px 32px;
+  background-color: var(--promo-banner-panel-background-color);
+  color: var(--promo-banner-panel-text-color);
+}
+
+.promo-banner-text p:first-child {
+  margin: 0;
+  font-weight: 700;
+  font-size: var(--heading-font-size-s);
+}
+
+.promo-banner-text h1,
+.promo-banner-text h2,
+.promo-banner-text h3 {
+  margin: 0;
+  color: var(--promo-banner-panel-text-color);
+  font-size: var(--heading-font-size-l);
+  font-weight: 700;
+}
+
+.promo-banner-text .button-container {
+  margin: 8px 0 0;
+}
+
+.promo-banner-text a.button:any-link {
+  margin: 0;
+  background-color: var(--promo-banner-cta-background-color);
+  color: var(--promo-banner-cta-text-color);
+}
+
+.promo-banner-text a.button:hover,
+.promo-banner-text a.button:focus {
+  background-color: var(--promo-banner-cta-hover-background-color);
+}
+
+@media (width >= 900px) {
+  .promo-banner > div {
+    grid-template-columns: 1fr 1fr;
+    align-items: stretch;
+    gap: 32px;
+  }
+
+  .promo-banner-image {
+    min-height: 100%;
+  }
+}
