@@ -226,6 +226,34 @@
         "value": ""
       },
       {
+        "component": "container",
+        "name": "links",
+        "label": "Links",
+        "multi": true,
+        "collapsible": true,
+        "fields": [
+          {
+            "component": "aem-content",
+            "name": "link",
+            "label": "Link"
+          },
+          {
+            "component": "text",
+            "valueType": "string",
+            "name": "linkText",
+            "label": "Label",
+            "required": true
+          },
+          {
+            "component": "text",
+            "valueType": "string",
+            "name": "linkTitle",
+            "label": "Title",
+            "value": ""
+          }
+        ]
+      },
+      {
         "component": "aem-content",
         "name": "cta",
         "label": "CTA link"
@@ -264,30 +292,6 @@
             "value": "secondary"
           }
         ]
-      }
-    ]
-  },
-  {
-    "id": "footer-list-item",
-    "fields": [
-      {
-        "component": "aem-content",
-        "name": "link",
-        "label": "Link"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "linkText",
-        "label": "Label",
-        "required": true
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "linkTitle",
-        "label": "Title",
-        "value": ""
       }
     ]
   },

@@ -3,13 +3,14 @@ import { moveInstrumentation } from '../../scripts/scripts.js';
 
 export default function decorate(block) {
   // authored rows always appear in this fixed order: the logo image row
-  // first, followed by the collapsed CTA link row (cta/ctaText/ctaTitle/
-  // ctaType fields), with any footer-list-item rows appended after - so the
-  // first link-bearing row (after the image) is reliably the CTA.
+  // first, then one row per entry of the repeatable "links" field, and
+  // finally the collapsed CTA link row (cta/ctaText/ctaTitle/ctaType
+  // fields) - so among the link-bearing rows, the last one is the CTA.
   const rows = [...block.children];
   const imageRow = rows.find((row) => row.querySelector('picture'));
   const linkRows = rows.filter((row) => row !== imageRow && row.querySelector('a'));
-  const [ctaRow, ...itemRows] = linkRows;
+  const ctaRow = linkRows.pop();
+  const itemRows = linkRows;
 
   if (imageRow) imageRow.className = 'footer-list-image';
   if (ctaRow) ctaRow.className = 'footer-list-cta';
