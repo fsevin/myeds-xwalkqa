@@ -209,7 +209,7 @@
     ]
   },
   {
-    "id": "footer-list",
+    "id": "footer-list-logo",
     "fields": [
       {
         "component": "reference",
@@ -224,35 +224,36 @@
         "name": "imageAlt",
         "label": "Alt text",
         "value": ""
+      }
+    ]
+  },
+  {
+    "id": "footer-list-item",
+    "fields": [
+      {
+        "component": "aem-content",
+        "name": "link",
+        "label": "Link"
       },
       {
-        "component": "container",
-        "name": "links",
-        "label": "Links",
-        "multi": true,
-        "collapsible": true,
-        "fields": [
-          {
-            "component": "aem-content",
-            "name": "link",
-            "label": "Link"
-          },
-          {
-            "component": "text",
-            "valueType": "string",
-            "name": "linkText",
-            "label": "Label",
-            "required": true
-          },
-          {
-            "component": "text",
-            "valueType": "string",
-            "name": "linkTitle",
-            "label": "Title",
-            "value": ""
-          }
-        ]
+        "component": "text",
+        "valueType": "string",
+        "name": "linkText",
+        "label": "Label",
+        "required": true
       },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "linkTitle",
+        "label": "Title",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "id": "footer-list-cta",
+    "fields": [
       {
         "component": "aem-content",
         "name": "cta",

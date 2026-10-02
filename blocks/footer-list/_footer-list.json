@@ -9,7 +9,52 @@
             "resourceType": "core/franklin/components/block/v1/block",
             "template": {
               "name": "Footer List",
-              "model": "footer-list"
+              "filter": "footer-list"
+            }
+          }
+        }
+      }
+    },
+    {
+      "title": "Footer List Logo",
+      "id": "footer-list-logo",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block/item",
+            "template": {
+              "name": "Footer List Logo",
+              "model": "footer-list-logo"
+            }
+          }
+        }
+      }
+    },
+    {
+      "title": "Footer List Item",
+      "id": "footer-list-item",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block/item",
+            "template": {
+              "name": "Footer List Item",
+              "model": "footer-list-item"
+            }
+          }
+        }
+      }
+    },
+    {
+      "title": "Footer List CTA",
+      "id": "footer-list-cta",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block/item",
+            "template": {
+              "name": "Footer List CTA",
+              "model": "footer-list-cta"
             }
           }
         }
@@ -18,7 +63,7 @@
   ],
   "models": [
     {
-      "id": "footer-list",
+      "id": "footer-list-logo",
       "fields": [
         {
           "component": "reference",
@@ -33,35 +78,36 @@
           "name": "imageAlt",
           "label": "Alt text",
           "value": ""
+        }
+      ]
+    },
+    {
+      "id": "footer-list-item",
+      "fields": [
+        {
+          "component": "aem-content",
+          "name": "link",
+          "label": "Link"
         },
         {
-          "component": "container",
-          "name": "links",
-          "label": "Links",
-          "multi": true,
-          "collapsible": true,
-          "fields": [
-            {
-              "component": "aem-content",
-              "name": "link",
-              "label": "Link"
-            },
-            {
-              "component": "text",
-              "valueType": "string",
-              "name": "linkText",
-              "label": "Label",
-              "required": true
-            },
-            {
-              "component": "text",
-              "valueType": "string",
-              "name": "linkTitle",
-              "label": "Title",
-              "value": ""
-            }
-          ]
+          "component": "text",
+          "valueType": "string",
+          "name": "linkText",
+          "label": "Label",
+          "required": true
         },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "linkTitle",
+          "label": "Title",
+          "value": ""
+        }
+      ]
+    },
+    {
+      "id": "footer-list-cta",
+      "fields": [
         {
           "component": "aem-content",
           "name": "cta",
@@ -105,5 +151,14 @@
       ]
     }
   ],
-  "filters": []
+  "filters": [
+    {
+      "id": "footer-list",
+      "components": [
+        "footer-list-logo",
+        "footer-list-item",
+        "footer-list-cta"
+      ]
+    }
+  ]
 }

@@ -2,15 +2,19 @@ import { createOptimizedPicture } from '../../scripts/aem.js';
 import { moveInstrumentation } from '../../scripts/scripts.js';
 
 export default function decorate(block) {
-  // authored rows always appear in this fixed order: the logo image row
-  // first, then one row per entry of the repeatable "links" field, and
-  // finally the collapsed CTA link row (cta/ctaText/ctaTitle/ctaType
-  // fields) - so among the link-bearing rows, the last one is the CTA.
+  // children can be authored/reordered freely (Logo, Footer List Item, CTA
+  // Button), so rows are classified by their rendered content rather than
+  // by position: the logo row has a <picture>, the CTA row's link is
+  // wrapped as a primary/secondary button, and everything else is a plain
+  // footer link.
   const rows = [...block.children];
   const imageRow = rows.find((row) => row.querySelector('picture'));
-  const linkRows = rows.filter((row) => row !== imageRow && row.querySelector('a'));
-  const ctaRow = linkRows.pop();
-  const itemRows = linkRows;
+  const ctaRow = rows.find(
+    (row) => row !== imageRow && row.querySelector('a.primary, a.secondary'),
+  );
+  const itemRows = rows.filter(
+    (row) => row !== imageRow && row !== ctaRow && row.querySelector('a'),
+  );
 
   if (imageRow) imageRow.className = 'footer-list-image';
   if (ctaRow) ctaRow.className = 'footer-list-cta';

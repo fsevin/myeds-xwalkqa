@@ -48,6 +48,14 @@
     ]
   },
   {
+    "id": "footer-list",
+    "components": [
+      "footer-list-logo",
+      "footer-list-item",
+      "footer-list-cta"
+    ]
+  },
+  {
     "id": "icon-list",
     "components": [
       "icon-list-item"
