@@ -22,7 +22,8 @@
       "calculator",
       "text-image",
       "content-fragment",
-      "promo-banner"
+      "promo-banner",
+      "footer-list"
     ]
   },
   {
@@ -44,6 +45,12 @@
       "image",
       "button",
       "title"
+    ]
+  },
+  {
+    "id": "footer-list",
+    "components": [
+      "footer-list-item"
     ]
   },
   {

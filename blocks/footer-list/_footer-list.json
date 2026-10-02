@@ -1,0 +1,128 @@
+{
+  "definitions": [
+    {
+      "title": "Footer List",
+      "id": "footer-list",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block",
+            "template": {
+              "name": "Footer List",
+              "model": "footer-list",
+              "filter": "footer-list"
+            }
+          }
+        }
+      }
+    },
+    {
+      "title": "Footer List Item",
+      "id": "footer-list-item",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block/item",
+            "template": {
+              "name": "Footer List Item",
+              "model": "footer-list-item"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "footer-list",
+      "fields": [
+        {
+          "component": "reference",
+          "valueType": "string",
+          "name": "image",
+          "label": "Logo",
+          "multi": false
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "imageAlt",
+          "label": "Alt text",
+          "value": ""
+        },
+        {
+          "component": "aem-content",
+          "name": "cta",
+          "label": "CTA link"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "ctaText",
+          "label": "CTA text",
+          "value": "Ouvrir un compte"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "ctaTitle",
+          "label": "CTA title",
+          "value": ""
+        },
+        {
+          "component": "select",
+          "valueType": "string",
+          "name": "ctaType",
+          "label": "CTA style",
+          "value": "primary",
+          "options": [
+            {
+              "name": "Default",
+              "value": ""
+            },
+            {
+              "name": "Primary",
+              "value": "primary"
+            },
+            {
+              "name": "Secondary",
+              "value": "secondary"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "footer-list-item",
+      "fields": [
+        {
+          "component": "aem-content",
+          "name": "link",
+          "label": "Link"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "linkText",
+          "label": "Label",
+          "required": true
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "linkTitle",
+          "label": "Title",
+          "value": ""
+        }
+      ]
+    }
+  ],
+  "filters": [
+    {
+      "id": "footer-list",
+      "components": [
+        "footer-list-item"
+      ]
+    }
+  ]
+}

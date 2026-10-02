@@ -61,7 +61,8 @@
         "calculator",
         "text-image",
         "content-fragment",
-        "promo-banner"
+        "promo-banner",
+        "footer-list"
       ]
     }
   ]
