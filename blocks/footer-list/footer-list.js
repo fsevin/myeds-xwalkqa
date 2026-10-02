@@ -1,20 +1,35 @@
 import { createOptimizedPicture } from '../../scripts/aem.js';
 import { moveInstrumentation } from '../../scripts/scripts.js';
 
+/**
+ * Determines which kind of footer-list child a row represents. Prefers the
+ * authoring-time model name (present while editing in the Universal Editor,
+ * even before the item has any content) and falls back to inspecting the
+ * rendered content shape (used on the published site, where instrumentation
+ * attributes are stripped). Rows that match neither default to "item" so
+ * they are never silently dropped - e.g. a newly-added, still-empty item.
+ * @param {Element} row The row element
+ * @returns {'image'|'cta'|'item'} The row's kind
+ */
+function classifyRow(row) {
+  const model = row.dataset.aueModel;
+  if (model === 'footer-list-logo') return 'image';
+  if (model === 'footer-list-cta') return 'cta';
+  if (model === 'footer-list-item') return 'item';
+  if (row.querySelector('picture')) return 'image';
+  if (row.querySelector('a.primary, a.secondary')) return 'cta';
+  return 'item';
+}
+
 export default function decorate(block) {
   // children can be authored/reordered freely (Logo, Footer List Item, CTA
-  // Button), so rows are classified by their rendered content rather than
-  // by position: the logo row has a <picture>, the CTA row's link is
-  // wrapped as a primary/secondary button, and everything else is a plain
-  // footer link.
+  // Button); classify each by type rather than by position or content so
+  // that empty, not-yet-authored items remain visible/selectable too.
   const rows = [...block.children];
-  const imageRow = rows.find((row) => row.querySelector('picture'));
-  const ctaRow = rows.find(
-    (row) => row !== imageRow && row.querySelector('a.primary, a.secondary'),
-  );
-  const itemRows = rows.filter(
-    (row) => row !== imageRow && row !== ctaRow && row.querySelector('a'),
-  );
+  const kinds = rows.map((row) => classifyRow(row));
+  const imageRow = rows.find((row, i) => kinds[i] === 'image');
+  const ctaRow = rows.find((row, i) => kinds[i] === 'cta' && row !== imageRow);
+  const itemRows = rows.filter((row) => row !== imageRow && row !== ctaRow);
 
   if (imageRow) imageRow.className = 'footer-list-image';
   if (ctaRow) ctaRow.className = 'footer-list-cta';
